@@ -1,0 +1,279 @@
+<div id="dati-ragazzo-{{ index }}" aria-labelledby="dati-ragazzo-{{ index }}-trigger" data-child="{{ index }}">
+    <h2>Abbonamento {{ index }}</h2>
+    <h5 class="form-heading mb-0">Inserire i dati dell'utilizzatore (bambino/ragazzo)</h5>
+    <br>
+    <form id="child-data-{{ index }}" class="needs-validation" action="#" novalidate data-child="{{ index }}">
+        <div class="row">
+            <div class="form-group col-sm">
+                <label for="child_name" class="text-truncate">Nome *</label>
+                <input type="text" class="form-control" id="child_name" name="child_name" data-bind="childName"
+                    required>
+                <div class="invalid-feedback">Questo campo è richiesto</div>
+            </div>
+            <div class="form-group col-sm">
+                <label for="child_surname" class="text-truncate">Cognome *</label>
+                <input type="text" class="form-control" id="child_surname" id="child_surname" data-bind="childSurname"
+                    required>
+                <div class="invalid-feedback">Questo campo è richiesto</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-1">
+                <label for="sex" class="text-truncate">Sesso *</label>
+                <select class="form-control" id="child_sex" name="child_sex" data-bind="childSex" required>
+                    <option></option>
+                    <option>M</option>
+                    <option>F</option>
+                </select>
+                <div id="child_sex_feedback" style="display:none;" class="invalid-select">Questo campo è richiesto
+                </div>
+            </div>
+            <div class="form-group col-sm-2">
+                <label for="child_birth_date" class="text-truncate">Data di nascita *</label>
+                <input type="text" class="form-control date-picker" id="child_birth_date" name="child_birth_date"
+                    data-bind="childBirthDate" placeholder="gg-mm-yyyy" required>
+                <div style="display:none;" class="invalid-select">Questo campo è richiesto</div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="child_birth_country" class="text-truncate">Nazione di nascita *</label>
+                <select class="form-control" id="child_birth_country" name="child_birth_country" required disabled>
+                    <option></option>
+                    <option value="ITA">ITALIA</option>
+                </select>
+                <div id="child_birth_country_hint">Seleziona la data di nascita per continaure</div>
+                <div id="child_birth_country_feedback" style="display:none;" class="invalid-select">Questo campo è
+                    richiesto</div>
+            </div>
+            <div class="form-group col-sm" style="display: none;" id="child_birth_city_div">
+                <label for="child_birth_city" class="text-truncate">Comune di nascita *</label>
+                <select class="form-control" id="child_birth_city" name="child_birth_city" required>
+                </select>
+                <div id="child_birth_city_feedback" style="display:none;" class="invalid-select">Questo campo è
+                    richiesto
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label for="child_fiscal_code" class="text-truncate">Codice fiscale *</label>
+                <input type="text" class="form-control" id="child_fiscal_code" name="child_fiscal_code"
+                    minlength="16" maxlength="16" required data-child="{{ index }}">
+                <div id="child_{{ index }}_fiscal_code_invalid" class="invalid-feedback">Il Codice fiscale non è valido</div>
+            </div>
+            <div class="form-group col-sm">
+                <label for="child_email" class="text-truncate">Indirizzo email</label>
+                <input type="email" class="form-control" id="child_email" name="child_email" data-bind="childEmail" data-child="{{ index }}"
+                    required>
+                    <div class="form-text text-muted">Useremo la tua email per l'account dell'abbonamento digitale</div>
+                <div class="invalid-feedback">L'indirizzo email non è valido</div>
+                <div id="child-email-warning" class="text-warning" style="display: none;">Attenzione. La mail inserita è uguale a quella del genitore.</div>
+            </div>
+            <div class="form-group col-sm">
+                <label for="child_phone" class="text-truncate">Cellulare</label>
+                <input type="tel" class="form-control" id="child_phone" name="child_phone" data-bind="childPhone"
+                    required>
+                <div class="invalid-feedback">Questo campo è richiesto</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-3">
+                <label for="child_residence_country" class="text-truncate">Nazione di residenza *</label>
+                <select class="form-control" id="child_residence_country" name="child_residence_country" required>
+                    <option></option>
+                    <option value="ITA">ITALIA</option>
+                </select>
+                <div id="child_residence_country_feedback" style="display:none;" class="invalid-select">Questo campo è
+                    richiesto</div>
+            </div>
+            <div class="form-group col-sm" id="child_residence_city_div">
+                <label for="child_residence_city" class="text-truncate">Comune di residenza *</label>
+                <select class="form-control select-2" id="child_residence_city" name="child_residence_city" required>
+                    <option></option>
+                </select>
+                <div id="child_residence_city_feedback" style="display:none;" class="invalid-select">Questo campo è
+                    richiesto</div>
+            </div>
+            <div class="form-group col-sm" id="child_residence_locality_div">
+                <label for="child_residence_locality" class="text-truncate">Località di residenza *</label>
+                <input type="text" class="form-control" id="child_residence_locality" name="child_residence_locality"
+                    data-bind="childResidenceLocality" required>
+                <div class="invalid-feedback">Questo campo è richiesto</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm">
+                <label for="child_address" class="text-truncate">Indirizzo di residenza *</label>
+                <input type="text" class="form-control" id="child_residence_address" name="child_residence_address"
+                    data-bind="childAddress" required>
+                <div class="invalid-feedback">Questo campo è richiesto</div>
+            </div>
+            <div class="form-group col-sm-2">
+                <label for="child_civic_number" class="text-truncate">Nr. civico *</label>
+                <input type="text" class="form-control" id="child_civic_number" name="child_civic_number"
+                    data-bind="childCivicNumber" required>
+                <div class="invalid-feedback">Questo campo è richiesto</div>
+            </div>
+            <div class="form-group col-sm-2">
+                <label for="child_zip_code" class="text-truncate">CAP *</label>
+                <input type="text" class="form-control" id="child_zip_code" name="child_zip_code"
+                    data-bind="childZipCode" required>
+                <div class="invalid-feedback">Questo campo è richiesto</div>
+            </div>
+        </div>
+        <h5 class="form-heading mt-4">Istituto scolastico</h5>
+        <div class="row">
+            <div class="form-group col-sm" id="child_school_name_div">
+                <label for="child_school_name" class="text-truncate">Nome istituto *</label>
+                <input type="text" class="form-control" id="child_school_name" name="child_school_name"
+                    data-bind="childSchoolName" required>
+                <div class="invalid-feedback">Questo campo è richiesto</div>
+            </div>
+            <div class="form-group col-sm" id="child_school_municipality_div">
+                <label for="child_school_municipality" class="text-truncate">Comune istituto *</label>
+                <select class="form-control select-2" id="child_school_municipality" name="child_school_municipality" required>
+                    <option></option>
+                </select>
+                <div id="child_school_municipality_feedback" style="display:none;" class="invalid-select">Questo campo è
+                    richiesto</div>
+            </div>
+        </div>
+        <h5 class="form-heading mt-4">Azienda</h5>
+        <h6 class="form-heading mt-0">Scegliere l'azienda alla quale richiedere l'abbonamento</h6>
+        <br>
+        <div class="row mt-3">
+            <div class="col">
+                <label for="tper" class="d-block mx-auto">
+                    <img src="{{ BASE_URL }}/img/sponsors/tper.png" class="d-block mx-auto">
+                </label>
+                <input id="tper" type="radio" value="tper" name="company" class="d-block mx-auto"
+                    data-bind="subscriptionCompany" data-child="{{ index }}">
+            </div>
+            <div class="col">
+                <label for="seta" class="d-block mx-auto">
+                    <img src="{{ BASE_URL }}/img/sponsors/seta.png" class="d-block mx-auto">
+                </label>
+                <input id="seta" type="radio" value="seta" name="company" class="d-block mx-auto"
+                    data-bind="subscriptionCompany" data-child="{{ index }}">
+            </div>
+            <div class="col">
+                <label for="start" class="d-block mx-auto">
+                    <img src="{{ BASE_URL }}/img/sponsors/start.png" class="d-block mx-auto">
+                </label>
+                <input id="start" type="radio" value="start" name="company" class="d-block mx-auto"
+                    data-bind="subscriptionCompany" data-child="{{ index }}">
+            </div>
+            <div class="col">
+                <label for="tep" class="d-block mx-auto">
+                    <img src="{{ BASE_URL }}/img/sponsors/tep.png" class="d-block mx-auto">
+                </label>
+                <input id="tep" type="radio" value="tep" name="company" class="d-block mx-auto"
+                    data-bind="subscriptionCompany" data-child="{{ index }}">
+            </div>
+        </div>
+        <div class="row mt-1">
+            <div class="col text-center">
+                <h5 class="form-heading mt-4">
+                    <strong>
+                        L'utenza è invitata a consultare i siti delle aziende di trasporto per assicurare la scelta della corretta tipologia di abbonamento.
+                    </strong>
+                </h5>
+            </div>
+        </div>
+        <div id="subscription_type_div" class="mt-5 row" style="display: none;">
+            <div class="col">
+                <label for="urban_radio" class="d-block text-center">
+                    Abbonamento Urbano
+                    <small class="d-block">Opzione per ragazzi frequentanti scuole medie</small>
+                </label>
+                <input id="urban_radio" name="subscription_type" type="radio" value="urban" class="d-block mx-auto"
+                    data-bind="subscriptionType" data-child="{{ index }}">
+            </div>
+            <div class="col">
+                <label for="suburban_radio" class="d-block text-center">
+                    <div>Abbonamento Extraurbano</div>
+                    <small class="d-block">Opzione per ragazzi frequentanti scuole elementari/medie</small>
+                </label>
+                <input id="suburban_radio" name="subscription_type" type="radio" value="suburban"
+                    class="d-block mx-auto" data-bind="subscriptionType" data-child="{{ index }}">
+            </div>
+        </div>
+        <div id="urban_select" style="display: none;" class="row mt-5">
+            <div class="col">
+                <label for="urban_area_select" class="text-truncate">Seleziona area urbana</label>
+                <select id="urban_area_select">
+                    <option></option>
+
+                </select>
+            </div>
+        </div>
+        <div id="suburban_select" style="display: none;" class="row mt-5">
+            <div class="col">
+                <label for="suburban_start_area" class="text-truncate">Zona origine</label>
+                <select id="suburban_start_area">
+                    <option></option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="suburban_end_area" class="text-truncate">Zona destinazione</label>
+                <select id="suburban_end_area">
+                    <option></option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div id="emission_type" data-child="{{ index }}">
+            <h5 class="form-heading mt-4">Modalità di emissione abbonamento</h5>
+            <h6 class="form-heading mt-0">Scegliere la tipologia di abbonamento</h6>
+            <div class="radio">
+                <input id="emission-type-radio-1" name="emission" type="radio" value="digital" data-bind="emissionType" data-child="{{ index }}">
+                <label for="emission-type-radio-1" class="radio-label">Digitale su App Roger</label>
+            </div>
+            <div class="radio">
+                <input id="emission-type-radio-2" name="emission" type="radio" value="physical" data-bind="emissionType" data-child="{{ index }}">
+                <label for="emission-type-radio-2" class="radio-label">Tessera fisica</label>
+            </div>
+        </div>
+        <div id="physical_shipment_info" style="display: none;" class="mt-5 row" >
+            L’abbonamento verrà spedito all’indirizzo di residenza del ragazzo il più presto possibile, compatibilmente con i tempi tecnici di emissione e di spedizione tramite posta
+        </div>
+        <!-- <div id="physical_shipment" style="display: none;" class="mt-5 row" data-child="{{ index }}">
+            <div class="col">
+                <label for="shipping" class="d-block text-center">
+                    Spedizione
+                </label>
+                <input id="shipping" name="physical_shipment" type="radio" value="home" data-bind="shipment"
+                    class="d-block mx-auto" data-child="{{ index }}">
+            </div>
+            <div class="col">
+                <label for="pick_up" class="d-block text-center">
+                    Ritiro in biglietteria
+                </label>
+                <input id="pick_up" name="physical_shipment" type="radio" value="ticket_office" data-bind="shipment"
+                    class="d-block mx-auto" data-child="{{ index }}">
+            </div>
+        </div> -->
+    </form>
+    <div id="child_photo_upload" class="panel mt-4 d-none">
+        <div class="panel-heading">Fototessera *</div>
+        <div class="panel-body mt-2">
+            <!-- Drop Zone -->
+            <div class="d-sm-flex justify-content-between">
+                <input type="file" name="file" id="child_id_input" data-child="{{ index }}">
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-3 d-flex justify-content-end">
+        <button class="btn btn-common d-block" onclick="stepper.previous()">Indietro</button>
+        <button type="submit" form="child-data-{{ index }}" id="step-2-next"
+            class="btn btn-common d-block ml-3">Avanti</button>
+    </div>
+    <div id="stepper-info" class="mt-1 d-none justify-content-end">
+        <p class="text-warning" id="stepper-info-error-message">
+        </p>
+    </div>
+    <div id="stepper-info-2" class="mt-1 d-none justify-content-end">
+        <p class="text-warning" id="stepper-info-error-message-zones">
+        </p>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+#verifica-riempimento{
+    padding-top: 100px;
+}
+#come_funziona_riempimento{
+    padding: 20px;
+    .row{
+        padding: 100px 0 45px;
+            background-size: 100% 100%;
+        background-image:url(/img/verifica-riempimento/sfondo_giallo.jpg);
+    }
+}
+#cta_riempimento{
+    .row{
+        background-image:url(/img/verifica-riempimento/cta.jpg);
+               padding: 500px 25px 50px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #ffed00;
+    a{
+        width: 100%;
+    }
+    img{
+        margin: 0 auto;
+        display: block;
+    }
+    @media screen and (max-width: 1200px){
+        padding: 400px 25px 20px;
+    }
+    @media screen and (max-width: 600px){
+        padding: 200px 25px 20px;
+    }
+    }
+}
+#mascherina_riempimento{
+    .row{
+        color: white;
+        background-color: #e74558;
+    }
+}
